@@ -84,6 +84,30 @@ const Syncronization = () => {
     });
   };
 
+  /* async,await関数を使う */
+    const set_init4 = async(a:number,b:number):Promise<boolean> => {
+      return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        int1 = a;
+        int2 = b;
+        resolve(true);
+        reject(false);
+        }, 1000);
+      });}
+    
+    const sum_int4=()=>{
+        alert(int1 + int2);
+    }
+    
+    const checksub4 = async () => {
+      await set_init4(1, 2);
+      sum_int4();
+    };
+    
+    //asyncとは、関数の前に付けると、その関数が非同期であることを示す
+    //awaitとは、非同期処理が終わるまで待つことを示す
+    //awaitは、async関数内でしか使えない
+
   return (
     <>
       <button className="mt-5" onClick={merge_int}>
@@ -105,6 +129,10 @@ const Syncronization = () => {
       <br />
       <button className="mt-5" onClick={checkmain2}>
         promiseを使った同期2
+      </button>
+      <br/>
+      <button className="mt-5" onClick={checksub4}>
+        async,awaitを使った同期
       </button>
     </>
   );
