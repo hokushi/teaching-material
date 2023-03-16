@@ -100,7 +100,8 @@ const Syncronization = () => {
     }
     
     const checksub4 = async () => {
-      await set_init4(1, 2);
+      const answer=await set_init4(1, 2);
+      console.log(answer)
       sum_int4();
     };
     
