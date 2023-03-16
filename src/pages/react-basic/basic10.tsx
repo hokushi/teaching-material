@@ -58,7 +58,7 @@ const Basic10 = () => {
              <h1 className="text-4xl font-bold">domの取得</h1>
              <button onClick={checkDom}>表示</button>
         </div>
-        <div className="mt-5">
+        <div className="text-center mt-5">
             <h1 className="text-4xl font-bold">直接変えるボタン1</h1>
             <button onClick={changeDom}>変更</button>
         </div>
