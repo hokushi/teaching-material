@@ -62,6 +62,12 @@ const ReactCheck = () => {
             非同期処理を同期処理にする
           </Link>
         </div>
+        <div className="mt-5">
+          <span className="text-red-500 text-xl">上級編④</span> <br />
+          <Link href="/react-basic/basic10" className="text-3xl">
+            userefの基本使い方
+          </Link>
+        </div>
       </div>
     </>
   );
