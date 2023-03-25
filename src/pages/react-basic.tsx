@@ -39,6 +39,12 @@ const ReactCheck = () => {
           </Link>
         </div>
         <div className="mt-5">
+          <span className="text-red-500 text-xl">step6</span> <br />
+          <Link href="/react-basic/basic11" className="text-3xl">
+            javascriptの基礎
+          </Link>
+        </div>
+        <div className="mt-5">
           <span className="text-red-500 text-xl">上級編⓪</span> <br />
           <Link href="/react-basic/basic6" className="text-3xl">
             今までのバリデーション
