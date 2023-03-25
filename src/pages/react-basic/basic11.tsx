@@ -12,12 +12,12 @@ const Javascript11 = () => {
         'key2': 'value2',
         'key3': 'value3'
       }
-    const {key1, key3, key4} = object
+    const {key1, key3} = object
 
     const object2 = {
-        'key5': 'value1',
-        'key6': 'value2',
-        'key7': 'value3'
+        'key5': 'value6',
+        'key6': 'value7',
+        'key7': 'value8'
       }
       
       const {key5, ...object3} = object2
@@ -35,7 +35,6 @@ const Javascript11 = () => {
             <h1>オブジェクトの分割代入</h1>
             <p>key1: {key1}</p>
             <p>key3: {key3}</p>
-            <p>key4: {key4}</p>
             <h1>...を使ったオブジェクト</h1>
             <p>key5: {key5}</p>
             <p>object3: {JSON.stringify(object3)}</p>
