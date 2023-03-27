@@ -17,7 +17,7 @@ const InputSchema = z.object({
 /** 2. TypeScriptの型を定義している。InputSchemaから型を想像してくれる */
 type InputType = z.infer<typeof InputSchema>;
 
-const ReactBasic7 = () => {
+const ReactBasic8 = () => {
   const {
     register,
     handleSubmit,
@@ -70,4 +70,4 @@ const ReactBasic7 = () => {
   );
 };
 
-export default ReactBasic7;
+export default ReactBasic8;

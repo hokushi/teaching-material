@@ -5,7 +5,7 @@ type InputType = {
   email: string;
 };
 
-const Basic6 = () => {
+const Basic7 = () => {
   /** いったんこれは呪文とおぼえてもいいよ！ */
   const {
     register,
@@ -68,4 +68,4 @@ const Basic6 = () => {
   );
 };
 
-export default Basic6;
+export default Basic7;
