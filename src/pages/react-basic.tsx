@@ -74,6 +74,12 @@ const ReactCheck = () => {
             userefの基本使い方
           </Link>
         </div>
+        <div className="mt-5">
+          <span className="text-red-500 text-xl">上級編⑤</span> <br />
+          <Link href="/react-basic/basic12" className="text-3xl">
+            usecontextの基本使い方
+          </Link>
+        </div>
       </div>
     </>
   );
