@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction, createContext,useState } from 'react';
 import { useContext} from 'react'
-import { TodoProvider } from "../components/basic12context";
-import { Todo } from "../components/basic12todo";
+import { TodoProvider } from "../../components/basic12context";
+import { Todo } from "../../components/basic12todo";
 
 export const UserCount = createContext(0)
 export const User2Count = createContext<UserCountContextType>(
