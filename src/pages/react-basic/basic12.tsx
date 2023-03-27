@@ -1,5 +1,8 @@
 import { Dispatch, SetStateAction, createContext,useState } from 'react';
 import { useContext} from 'react'
+import { TodoProvider } from "../components/basic12context";
+import { Todo } from "../components/basic12todo";
+
 export const UserCount = createContext(0)
 export const User2Count = createContext<UserCountContextType>(
     {
@@ -39,6 +42,11 @@ const Basic12 = () => {
               <User2Count.Provider value={value}>
                 <ComponentD/>
               </User2Count.Provider>
+            </div>
+            <div className='mt-10'>
+                <TodoProvider>
+                    <Todo />
+                </TodoProvider>
             </div>
         </div>
     )
