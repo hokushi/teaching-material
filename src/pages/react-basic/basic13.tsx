@@ -3,11 +3,13 @@ import { useRecoilState } from "recoil";
 import { useRecoilValue } from "recoil";
 import { countState, userState,pullState } from "../../components/atoms";
 import dynamic from 'next/dynamic';
+import { recoilPersist } from "recoil-persist";
+import { useEffect } from "react";
 
 const MyComponentWithPersistAtom = dynamic(() => import("../../components/usercomponent"), { ssr: false });
 
 
-const Home = () => {
+const Home = ({initialAge}) => {
 
   //atomの値の操作を定義（read,write)
   const [count, setCount] = useRecoilState(countState);
@@ -23,6 +25,12 @@ const Home = () => {
   const updateUser = u => {
     return { ...u, ...{ age: u.age + 1 } };
   }
+
+  useEffect(() => {
+    console.log("useEffect");
+  }, []);
+
+
 
   return (
     <>
@@ -47,5 +55,6 @@ const Home = () => {
     </>
   );
 }
+
 
 export default Home;

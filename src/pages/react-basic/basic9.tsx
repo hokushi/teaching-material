@@ -100,9 +100,14 @@ const Syncronization = () => {
     }
     
     const checksub4 = async () => {
+      try{
       const answer=await set_init4(1, 2);
       console.log(answer)
       sum_int4();
+      }
+      catch(error){
+        console.log(error)
+      }
     };
     
     //asyncとは、関数の前に付けると、その関数が非同期であることを示す
