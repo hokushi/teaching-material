@@ -1,18 +1,15 @@
 import Link from "next/link";
-import { useRecoilState } from "recoil";
-import { useRecoilValue } from "recoil";
 import { countState, userState,pullState } from "../../components/atoms";
+import { useRecoilState, useRecoilValue, useRecoilValueLoadable } from "recoil";
 import dynamic from 'next/dynamic';
 
 const MyComponentWithPersistAtom = dynamic(() => import("../../components/usercomponent"), { ssr: false });
-
 
 const Home = () => {
 
   //atomの値の操作を定義（read,write)
   const [count, setCount] = useRecoilState(countState);
   const pull = useRecoilValue(pullState);
-  const [user, setUser] = useRecoilState(userState);
 
   const increment =() => {
     setCount(count + 1);
@@ -44,10 +41,10 @@ const Home = () => {
         <p>{pull.tel}</p>
       </div>
       <div className="mt-10 text-red-500">難しめ</div>
+      <p>persistatomを使いstateの永続化をしたも。しかしrecoilpersistはライアントサイドでしか動かない。そのためサーバー側とクライアント側でレンダリングする内容に違いが生じる</p>
+      <p>解決方法を表示する。</p>
+      <p>dynamicを使うことでssrを実行しないようにしている</p>
       <MyComponentWithPersistAtom/>
-      <div>
-        <Link href="/about13">About</Link>
-      </div>
     </>
   );
 }
