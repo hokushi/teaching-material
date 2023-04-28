@@ -1,22 +1,18 @@
 import Link from "next/link";
-import { useRecoilState } from "recoil";
-import { useRecoilValue } from "recoil";
 import { countState, userState,pullState } from "../../components/atoms";
+import { useRecoilState, useRecoilValue, useRecoilValueLoadable } from "recoil";
 import dynamic from 'next/dynamic';
 
 const MyComponentWithPersistAtom = dynamic(() => import("../../components/usercomponent"), { ssr: false });
-
 
 const Home = () => {
 
   //atomの値の操作を定義（read,write)
   const [count, setCount] = useRecoilState(countState);
-  const [user, setUser] = useRecoilState(userState);
   const pull = useRecoilValue(pullState);
 
-  //count increment処理
-  const increment = c => {
-    return c + 1;
+  const increment =() => {
+    setCount(count + 1);
   }
 
   //userのageをカウントアップ（機能としては意味無し）
@@ -26,17 +22,18 @@ const Home = () => {
 
   return (
     <>
-      <h1>Home</h1>
+      <p>まずrecoilを使うためにはrecoilを使う際に適応するべき場所を＜recoilroot＞で囲む</p>
+      <p>今回はページ全体につけるためにapp.tsxですべてを囲っている</p>
+      <p>今回はcomponentフォルダのatoms.tsxにてstateを管理する</p>
+      <p>そこで管理するstateをどこでも使うようにできるのがrecoilのイメージ</p>
+      <p className="text-red-500 mt-5">基本的な使い方</p>
       <div>
         <p>count:{count}</p>
-        <button onClick={() => setCount(increment)}>count increment</button>
-        <hr />
+        <button onClick={increment}>count increment</button>
       </div>
-      <MyComponentWithPersistAtom/>
-      <div>
-        <Link href="/about13">About</Link>
-      </div>
+      <p>これはuseRecoilStateを使いstateの値、更新関数を参照した</p>
       <div className="mt-10">
+        <p>次はもっと簡単にuseRecoilValueを利用してstate値を利用するだけ</p>
         <p>{pull.title}</p>
         <p>{pull.name}</p>
         <p>{pull.age}</p>
@@ -44,6 +41,12 @@ const Home = () => {
         <p>{pull.address}</p>
         <p>{pull.tel}</p>
       </div>
+      <div className="mt-10 text-red-500">難しめ</div>
+      <p>persistatomを使いstateの永続化をしたも。しかしrecoilpersistはライアントサイドでしか動かない。そのためサーバー側とクライアント側でレンダリングする内容に違いが生じる</p>
+      <p>おそらくrecoilpersistはlocalstrageにて保存をしているためssrとの共存が不可なのではないかと</p>
+      <p>解決方法を表示する。</p>
+      <p>dynamicを使うことでssrを実行しないようにしている</p>
+      <MyComponentWithPersistAtom/>
     </>
   );
 }
