@@ -86,6 +86,12 @@ const ReactCheck = () => {
             Recoilの使い方
           </Link>
         </div>
+        <div className="mt-5">
+          <span className="text-red-500 text-xl">上級編⑦</span> <br />
+          <Link href="/react-basic/basic14" className="text-3xl">
+            ssr,ssg,isr,csrとは
+          </Link>
+        </div>
       </div>
     </>
   );
