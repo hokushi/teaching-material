@@ -1,7 +1,8 @@
 module.exports = {
-  preset: "ts-jest",
   testEnvironment: "jsdom",
-  moduleNameMapper: {
-    "\\.(css|less|sass|scss)$": "identity-obj-proxy",
+  transform: {
+    "^.+\\.tsx?$": "babel-jest",
   },
+  testRegex: "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+  moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
 };
