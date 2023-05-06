@@ -24,7 +24,7 @@ const Basic16 = () => {
             <p>結合テストとは、複数の単体を組み合わせてテストすること</p>
             <p>総合テストとは、システム全体をテストすること</p>
             <p>今回は単体テストを行う</p>
-            <a className="text-red-500" href="https://typescriptbook.jp/tutorials/jest">わかりやすい記事</a>
+            <a className="text-red-500" href="https://qiita.com/KNR109/items/7cf6b24bed318dab5715">わかりやすい記事</a>
             <p>テストを行うには、テスト対象の関数やクラスを作成する必要がある</p>
             <p className="text-red-500">まずは簡単な関数のみのテスト</p>
             <p>src/pages/react-basic/basic16.tsxにある関数を作成する</p>
